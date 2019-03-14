@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
-    var elements = ["potassium", "neon"];
+    $(".card").hide();
+
+    var elements = ["potassium", "neon", "gold", "silver", "copper", "uranium", "krypton", "nitrogen", "carbon"];
 
 
 
@@ -9,7 +11,7 @@ $(document).ready(function () {
         var element = $(this).attr("data-name");
 
         console.log(`You picked the element ${element}.`);
-        // Add code to query the bands in town api searching for the artist received as an argument to this function
+        
         var url;
         var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=XJPHCKsGgocOUIzcJHm4p5ImTpelqCgY&q=" + element + "&limit=10&offset=0&rating=PG&lang=en";
 
@@ -20,11 +22,25 @@ $(document).ready(function () {
             console.log(response);
 
             for (var i = 0; i < 10; i++) {
+                var newCard = $("<div>");
+                newCard.addClass("card");
                 var img = $("<img>");
                 url = response.data[i].images.fixed_height.url;
-                console.log(url);
-                img.attr("src", url);
-                $("#pictures").append(img);
+                img.attr("src", url).addClass("card-img-top");
+                newCard.append(img);
+                var newCardBody = $("<div>");
+                newCardBody.addClass("card-body");
+                var newH5 = $("<h5>");
+                newH5.addClass("card-title").text("Rating:");
+                var newP = $("<p>");
+                newP.addClass("card-text").text(response.data[i].rating);
+                var newA = $("<a>");
+                newA.attr("href", "http://www.periodictable.com");
+                newCardBody.append(newH5, newP, newA);
+                newCard.append(newCardBody);
+                $("#pictures").append(newCard);
+                $(".card").show();
+
             }
         });
 

@@ -3,9 +3,9 @@ body {
 }
 
 form {
-    background: white;
+    /* background: white; */
     padding: 20px;
-   width: 30%;
+   /* width: 30%; */
     font-family: 'Rubik', sans-serif;
     text-align: center;
 }
@@ -14,7 +14,7 @@ h1 {
     font-family: 'Rubik', sans-serif;
     color: whitesmoke;
     text-align: center;
-    background: black;
+    background: darkblue;
     padding: 5px;
     margin-bottom: 0;
 }
@@ -22,16 +22,47 @@ h1 {
 #element-form {
     margin-left: auto;
     margin-right: auto;
+    overflow: auto;
+    clear: both;
+    width: 40%;
+    background: whitesmoke;
+    padding: 20px;
 }
 
 #pictures {
     margin: 5px;
 }
 
+#buttons-view {
+    display: flex;
+    justify-content: center;
+}
+
 .element {
     margin: 5px;
-    background: plum;
+    background: purple;
     font-family: 'Rubik', sans-serif;
     font-size: 1.5em;
+}
+
+.element:hover {
+    background: darkblue;
+    color: white;
+}
+
+/* #element-input {
+    width: auto;
+    overflow: auto;
+    clear: both;
+} */
+
+.card {
+    width: 15rem;
+    display: inline-block;
+    margin: 10px;
+}
+
+p, h5, label, h6 {
+    font-family: 'Rubik', sans-serif;
 }
 
