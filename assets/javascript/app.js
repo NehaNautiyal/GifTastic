@@ -1,12 +1,13 @@
 $(document).ready(function () {
 
     var elements = ["potassium", "neon"];
-    var element = $(".element").attr("data-name");
+
 
 
     function searchForElementGifs(element) {
+        $("#pictures").empty();
+        var element = $(this).attr("data-name");
 
-        
         console.log(`You picked the element ${element}.`);
         // Add code to query the bands in town api searching for the artist received as an argument to this function
         var url;
@@ -51,24 +52,22 @@ $(document).ready(function () {
     renderButtons();
 
 
-    // Event handler for user clicking the select-element button
+    // Event handler for user clicking the GO button
     $("#select-element").on("click", function (event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
         //Empty the current Gifs displayed
         $("#pictures").empty();
         // Storing the artist name
-        var element = $("#element-input").val().trim();
+        element = $("#element-input").val().trim();
         //Add the new element to the Elements array
         elements.push(element);
-        //Empty the input box;
-        $("#element-input").val("");
         //Show the buttons for the new element
         renderButtons();
-        // Running the searchForElementGifs function(passing in the element as an argument)
-        searchForElementGifs(element);
+        //Empty the input box;
+        $("#element-input").val("");
     });
 
-    // Adding click event listeners to all elements with a class of "movie"
-    $(document).on("click", ".element", searchForElementGifs(element));
+    // Adding click event listeners to all elements with a class of "movie" (THE BUTTONS)
+    $(document).on("click", ".element", searchForElementGifs);
 });
