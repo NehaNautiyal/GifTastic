@@ -1,0 +1,37 @@
+body {
+    background-image: url("../images/element-wallpaper.jpg");
+}
+
+form {
+    background: white;
+    padding: 20px;
+   width: 30%;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    background: black;
+    padding: 5px;
+    margin-bottom: 0;
+}
+
+#element-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pictures {
+    margin: 5px;
+}
+
+.element {
+    margin: 5px;
+    background: plum;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5em;
+}
+
