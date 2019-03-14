@@ -22,11 +22,23 @@ $(document).ready(function () {
             console.log(response);
 
             for (var i = 0; i < 10; i++) {
+
+                
+                
                 var newCard = $("<div>");
                 newCard.addClass("card");
                 var img = $("<img>");
-                url = response.data[i].images.fixed_height.url;
-                img.attr("src", url).addClass("card-img-top");
+
+                var stillSrc = response.data[i].images.fixed_height_still.url;
+                var animateSrc = response.data[i].images.fixed_height.url;
+                console.log(animateSrc);
+                
+                //Give the desired attributes to each image
+                img.attr("src", stillSrc).addClass("card-img-top gif");
+                img.attr("data-state", "still");
+                img.attr("data-animate", animateSrc);
+                img.attr("data-still", stillSrc);
+
                 newCard.append(img);
                 var newCardBody = $("<div>");
                 newCardBody.addClass("card-body");
@@ -45,6 +57,23 @@ $(document).ready(function () {
         });
 
     }
+
+    $(document).on("click", ".gif", function() {
+
+        var state = $(this).attr("data-state");
+        var animateSrc = $(this).attr("data-animate");
+        var stillSrc = $(this).attr("data-still");
+
+        if (state === "still") {
+            $(this).attr("src", animateSrc);
+            $(this).attr("data-state", "animate");
+          } else if (state === "animate") {
+            $(this).attr("src", stillSrc);
+            $(this).attr("data-state", "still");
+    
+          }
+
+    });
 
 
     // Function for displaying initial Element buttons
