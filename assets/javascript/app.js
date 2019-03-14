@@ -35,7 +35,7 @@ $(document).ready(function () {
                 var newP = $("<p>");
                 newP.addClass("card-text").text(response.data[i].rating);
                 var newA = $("<a>");
-                newA.attr("href", "http://www.periodictable.com");
+                newA.attr("href", "http://www.periodictable.com").text(`Learn more about ${element}`);
                 newCardBody.append(newH5, newP, newA);
                 newCard.append(newCardBody);
                 $("#pictures").append(newCard);
