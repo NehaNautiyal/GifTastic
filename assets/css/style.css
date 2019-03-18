@@ -19,6 +19,12 @@ h1 {
     margin-bottom: 0;
 }
 
+h2 {
+    font-family: 'Rubik', sans-serif;
+    color: whitesmoke;
+    margin: 5px;
+}
+
 #element-form {
     margin-left: auto;
     margin-right: auto;
@@ -38,7 +44,7 @@ h1 {
     justify-content: center;
 }
 
-.element {
+.element, h2 {
     margin: 5px;
     background: purple;
     font-family: 'Rubik', sans-serif;
@@ -50,19 +56,38 @@ h1 {
     color: white;
 }
 
-/* #element-input {
-    width: auto;
-    overflow: auto;
-    clear: both;
-} */
-
 .card {
     width: 15rem;
     display: inline-block;
     margin: 10px;
 }
 
-p, h5, label, h6 {
+.card-title, .notFavorite {
+    color: black;
+
+}
+
+.download {
+    font-size: 1em;
+}
+
+h2 {
+    display: inline-block;
+}
+
+p, h5, label, h6, .notFavorite {
     font-family: 'Rubik', sans-serif;
 }
 
+p, {
+    margin-top: 8px;
+}
+
+.favorite {
+    color: yellow;
+}
+
+#favorite-box {
+    border: black solid 7px;
+    font-family: 'Rubik', sans-serif;
+}
