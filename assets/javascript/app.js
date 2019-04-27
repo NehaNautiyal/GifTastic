@@ -165,6 +165,7 @@ $(document).ready(function () {
     $("#select-element").on("click", function (event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
+        console.log("You have clicked something");
         if (!$(".card").hasClass("favorite")) {
 
             //Empty the current Gifs displayed
