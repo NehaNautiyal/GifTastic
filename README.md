@@ -19,8 +19,6 @@ Once the gifs are displayed, the rating is shown and a link to a Periodic Table 
 Click on the gif to play it, and click it again to stop it.
 You can also Download the gif or click on the star to make the gif your "favorite" as you click more buttons to display other gifs.
 
-/Users/nnautiyal/Downloads/Apr 26, 2019 8_48 PM.webm
-
 ## Link to Deployed Site
 
 (http://nehanautiyal.github.io/GifTastic)  
